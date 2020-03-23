@@ -31,6 +31,9 @@ class Table extends Component {
 				birth: "10/31/1999"
 			}
 		];
+		this.state = {
+			people : this.people
+		}
 	}
 	compareDates(person1, person2) {
 		// complete this date comparator which enables sort by age
@@ -38,6 +41,18 @@ class Table extends Component {
 
 	compareNames(person1, person2) {
 		// complete this string comparator with enables sort by name
+	}
+
+	renderRows(){
+		return this.state.people.map((person, index) => {
+			const { name, birth } = person 
+			return (
+			   <tr key={index}>
+				  <td>{name}</td>
+				  <td>{birth}</td>
+				</tr>
+			)
+		 })
 	}
 
 	render() {
@@ -51,9 +66,7 @@ class Table extends Component {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td />
-        </tr>
+	  	{this.renderRows()}
       </tbody>
     </table>
   </div>
