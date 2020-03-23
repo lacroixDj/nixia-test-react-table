@@ -20,13 +20,14 @@ class App extends Component {
   }
 
   render() {
+    let sortParameter = this.state.parameterState;
     return (
       <div className='container-fluid'>
         <center>
           <h1>Birthday Records</h1>
         </center>
         <Radio sortByParameter={this.sortByParameter}/>
-        <Table />
+        <Table sortParameter={sortParameter}/>
       </div>
 );
 
